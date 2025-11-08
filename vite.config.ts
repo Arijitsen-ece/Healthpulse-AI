@@ -5,8 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/Healthpulse-AI/", // 👈 ADD THIS LINE
-
+  base: mode === "production" ? "/Healthpulse-AI/" : "/", // ✅ Works for both dev & deploy
   server: {
     host: "::",
     port: 8080,
